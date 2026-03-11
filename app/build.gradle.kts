@@ -32,6 +32,13 @@ dependencies {
     implementation("ch.qos.logback:logback-core:1.2.10")
 
 }
+tasks.named<org.gradle.api.tasks.testing.Test>("test") {
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+    }
+}
+
 
 // Apply a specific Java toolchain to ease working on different environments.
 java {
