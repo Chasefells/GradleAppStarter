@@ -4,11 +4,20 @@
 package org.example;
 
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test void appHasAGreeting() {
+    private static final Logger logger = LoggerFactory.getLogger(AppTest.class);
+    
+    @Test 
+    void appHasAGreeting() {
+        logger.debug("Starting test method: appHasAGreeting");
+        
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+        
+        logger.debug("Completed test method: appHasAGreeting");
     }
 }
